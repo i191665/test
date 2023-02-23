@@ -1,4 +1,4 @@
-from wallet import Balance
+from wallet import Wallet
 
 def test_getBalance():
     obj = Balance()
