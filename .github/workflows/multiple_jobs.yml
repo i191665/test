@@ -1,0 +1,31 @@
+name: Multiple Jobs
+on:
+  push:
+    branches: [master]
+    
+jobs:
+  # Job 1
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout (Clone repo)
+      uses: actions/checkout@v2
+      
+    - name: Install packages
+      run: pip install pytest
+      
+    - name: Run tests
+      run: pytest test.py
+      
+  # Job 2
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout (Clone repo)
+      uses: actions/checkout@v2
+      
+    # Multiple commands example
+    - name: Install packages, and lint
+      run: |
+        pip install flake8
+        flake8 ./
