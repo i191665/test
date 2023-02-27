@@ -1,6 +1,6 @@
 from wallet import Wallet
 
-def test_getBalance():
+def test_get_balance():
     obj = Wallet()
-    obj.setBalance(20)
-    assert(obj.getBalance() == 20)
+    obj.add_balance(20)
+    assert(obj.get_balance() == 20)
